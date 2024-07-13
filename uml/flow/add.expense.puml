@@ -1,0 +1,23 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+actor User
+participant Client
+participant Server
+database Database
+
+User -> Client: Click 'Add expense' button
+Client -> User: Display modal window
+User -> User: Fill out the form
+User -> Client: Submit
+Client -> Server: Add expense Request
+Server -> Server: Validate data
+Server -> Database: Save data
+Server --> Client: Add expense Response
+Client -> Server: Refresh chart Request
+Server -> Database: Get aggregated expenses for the last 30 days
+Database -> Server: Return aggregated expenses for the last 30 days
+Server --> Client: Refresh chart Response
+Client -> User: Rerender chart
+
+@enduml
