@@ -1,0 +1,9 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+Client -> Server: Get aggregated expenses for the last 30 days Request
+Server --> Client: Get aggregated expenses for the last 30 days Response
+
+@enduml
