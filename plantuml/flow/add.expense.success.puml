@@ -1,0 +1,43 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+skinparam {
+    MaxMessageSize 200
+    ParticipantPadding 30
+}
+
+skinparam sequence {
+    MessageAlign center
+}
+
+skinparam title {
+    BorderRoundCorner 10
+    BorderThickness 1.5
+    BorderColor Green
+    BackgroundColor #d9fceb
+    FontSize 20
+}
+
+autonumber
+title Add expense - 200 OK
+
+actor User #green
+participant Client #fcfbd9
+participant Server #d9dcfc
+database Database #fcd9f9
+
+User -> Client: Click 'Add expense' button
+Client -> Client: Display modal window
+User -> User: Fill out the form
+User -> Client: Submit
+Client -> Server: Add expense Request
+Server -> Server: Validate data
+Server -> Database: Save data
+Server --> Client: Add expense Response
+Client -> Server: Refresh chart Request
+Server -> Database: Get aggregated expenses for the last 30 days
+Database --> Server: Return aggregated expenses for the last 30 days
+Server --> Client: Refresh chart Response
+Client -> Client: Rerender chart
+
+@enduml
