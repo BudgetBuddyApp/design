@@ -1,0 +1,21 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+skinparam {
+    MaxMessageSize 200
+    ParticipantPadding 30
+}
+
+skinparam sequence {
+    MessageAlign center
+}
+
+skinparam title {
+    BorderRoundCorner 10
+    BorderThickness 1.5
+    BorderColor Green
+    BackgroundColor #d9fceb
+    FontSize 20
+}
+
+@enduml

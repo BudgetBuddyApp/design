@@ -1,30 +1,9 @@
-@startuml
+@startuml add expense - ok
 'https://plantuml.com/sequence-diagram
 
-skinparam {
-    MaxMessageSize 200
-    ParticipantPadding 30
-}
+!include ../templates/api.puml
 
-skinparam sequence {
-    MessageAlign center
-}
-
-skinparam title {
-    BorderRoundCorner 10
-    BorderThickness 1.5
-    BorderColor Green
-    BackgroundColor #d9fceb
-    FontSize 20
-}
-
-autonumber
 title Add expense - 200 OK
-
-actor User #green
-participant Client #fcfbd9
-participant Server #d9dcfc
-database Database #fcd9f9
 
 User -> Client: Click 'Add expense' button
 Client -> Client: Display modal window

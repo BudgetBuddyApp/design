@@ -1,0 +1,15 @@
+@startuml get user categories - ok
+
+!include ../templates/api.puml
+
+title Get user categories - 200 OK
+
+User -> Client: Click 'Add expense' button
+Client -> Server: Get user categories Request
+Server -> Database: Find user categories
+Database --> Server: Return user categories
+Server --> Client: Get user categories Response
+Client -> Client: Display modal window
+User -> Client: Select categories
+
+@enduml

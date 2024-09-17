@@ -1,0 +1,14 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+!include base.puml
+
+autonumber
+
+actor User #green
+participant Client #fcfbd9
+participant Server #d9dcfc
+database Database #fcd9f9
+
+
+@enduml
